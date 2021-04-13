@@ -21,6 +21,8 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Kelas' => $baseDir . '/app/Models/Kelas.php',
     'App\\Models\\Mahasiswa' => $baseDir . '/app/Models/Mahasiswa.php',
+    'App\\Models\\Mahasiswa_MataKuliah' => $baseDir . '/app/Models/Mahasiswa_MataKuliah.php',
+    'App\\Models\\MataKuliah' => $baseDir . '/app/Models/MataKuliah.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
