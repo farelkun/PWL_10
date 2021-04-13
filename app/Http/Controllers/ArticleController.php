@@ -67,7 +67,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -79,7 +79,18 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        if($article->feature_image && file_exists( storage_path('app/public/' . $article->feature->image))){
+            Storage::delete('public/' . $article->feature_image);
+        }
+        if($request->file('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
+        $article->update([
+            'title' => $request->title,
+            'content' => $request->content,
+            'feature_image' => $image_name
+        ]);
+        return redirect()->route('articles.index')->with('success', 'Data updated successfully');
     }
 
     /**
